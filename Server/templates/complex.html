@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Complex :(</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="complex.css">
+</head>
+<body>
+    <div class="container mt-3">
+        <h1>Complex Queries</h1>
+        <p>Optimizes cost on longer, naturally sectioned documents</p>
+        <p>Double click to delete sections!</p>
+        <input type="text" class="form-control" placeholder="Name of the document as a whole" id="grandDocumentName">
+    </div>
+    <div class="container mt-3">
+        <!--Section Creator-->
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card mb-3">
+                    <div class="card-header">Sections</div>
+                    <div class="card-body">
+                        <ul class="list-group" id="sectionList">
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!--Documetn Entry-->
+            <div class="col-md-8">
+                <input type="text" class="form-control" placeholder="Document name" id="documentName">
+                <input type="text" class="form-control mt-3" placeholder="Document Description" id="documentDescription">
+                <textarea class="form-control mt-3" placeholder="Enter document content here:" rows="50" id="documentContent"></textarea>
+                <button class="btn btn-primary mt-3" id="saveDocument" onclick="saveFile()">Save Document</button>
+            </div>
+    </div>
+    
+    <!--ChatGPT button-->
+    <button id="chatgpt-button" class="btn btn-primary" 
+            style="position: fixed; bottom: 20px; right: 20px; z-index: 1000;"
+            onclick="askGPT()">
+            Ask ChatGPT
+    </button>
+    <div id="ChatGPT-interface" class="card" style="position: fixed; bottom: 20px; right: 20px; z-index: 1000; width: 25%; max-height: 50%; overflow: auto; display: none;"></div>
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="complex.js"></script>
+</body>
+

@@ -72,6 +72,53 @@
     width: 100%;
   }
   
+  /* Drop Zone Styles */
+  .drop-zone {
+    height: 100dvh; /* Adjust height as needed */
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-weight: 500;
+    font-size: 1rem;
+    cursor: pointer;
+    color: var(--text-secondary);
+    border: 2px dashed var(--border-color);
+    border-radius: var(--border-radius);
+    background-color: var(--surface-color);
+    transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+    position: relative; /* Needed for absolute positioning of thumb */
+    overflow: hidden; /* Hide overflow from thumb */
+  }
+  
+  .drop-zone--over {
+    border-color: var(--primary-color);
+    background-color: #eef2ff; /* Light primary background */
+  }
+  
+  .drop-zone__prompt {
+    display: block; /* Ensure it's visible initially */
+  }
+  
+  .drop-zone__thumb {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Cover the area, might crop */
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none; /* Hidden initially */
+  }
+  
+  .drop-zone--filled .drop-zone__prompt {
+    display: none; /* Hide prompt when filled */
+  }
+  
+  .drop-zone--filled .drop-zone__thumb {
+    display: block; /* Show thumb when filled */
+  }
+  
   /* Question Section */
   .question-section {
     margin: 2rem 0;

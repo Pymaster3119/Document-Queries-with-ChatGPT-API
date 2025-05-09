@@ -31,8 +31,11 @@
             <!--Documetn Entry-->
             <div class="col-md-8">
                 <input type="text" class="form-control" placeholder="Document name" id="documentName">
-                <input type="text" class="form-control mt-3" placeholder="Document Description" id="documentDescription">
-                <textarea class="form-control mt-3" placeholder="Enter document content here:" rows="50" id="documentContent"></textarea>
+                <div class="drop-zone mt-3" id="imageDropZone">
+                    <span class="drop-zone__prompt">Drag & drop an image here, or click to select</span>
+                    <img src="" alt="Image preview" class="drop-zone__thumb" id="imagePreview">
+                    <input type="file" id="imageFileInput" accept="image/*,application/pdf" style="display: none;">
+                </div>
                 <button class="btn btn-primary mt-3" id="saveDocument" onclick="saveFile()">Save Document</button>
             </div>
     </div>
@@ -50,4 +53,5 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="complex.js"></script>
 </body>
+</html>
 
